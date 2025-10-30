@@ -2,7 +2,6 @@ class Book:
     def __init__(self, title, author):
         self.title = title
         self.author = author
-        self.classname = "Book"
     def __str__(self):
         return "Base class"
     
@@ -10,7 +9,6 @@ class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
         self.file_size = file_size
-        self.classname = "EBook"
     
     def __str__(self):
         return "Derived class"
@@ -18,7 +16,6 @@ class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
         self.page_count = page_count
-        self.classname = "PrintBook"
     
     def __str__(self):
         return "Derived class"
@@ -32,9 +29,9 @@ class Library:
         
     def list_books(self):
         for book in self.books:
-            if book.classname =="PrintBook":
-                print(f"{book.classname}: {book.title} by {book.author}, Page Count: {book.page_count}")
-            elif book.classname == "EBook":
-                print(f"{book.classname}: {book.title} by {book.author}, File Size: {book.file_size}KB")
-            elif book.classname == "Book":
-                 print(f"{book.classname}: {book.title} by {book.author}")
+            if book.__class__.__name__ =="PrintBook":
+                print(f"{book.__class__.__name__}: {book.title} by {book.author}, Page Count: {book.page_count}")
+            elif book.__class__.__name__ == "EBook":
+                print(f"{book.__class__.__name__}: {book.title} by {book.author}, File Size: {book.file_size}KB")
+            elif book.__class__.__name__ == "Book":
+                 print(f"{book.__class__.__name__}: {book.title} by {book.author}")
