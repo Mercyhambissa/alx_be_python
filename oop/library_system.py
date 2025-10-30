@@ -23,15 +23,15 @@ class PrintBook(Book):
     def __str__(self):
         return "Derived class"
 class Library:
-    books = []
+    
     def __init__(self):
-        pass
+        self.books = []
     
     def add_book(self, book):
-        Library.books.append(book)
+        self.books.append(book)
         
     def list_books(self):
-        for book in Library.books:
+        for book in self.books:
             if book.classname =="PrintBook":
                 print(f"{book.classname}: {book.title} by {book.author}, Page count: {book.page_count}")
             elif book.classname == "EBook":
