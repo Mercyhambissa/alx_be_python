@@ -3,17 +3,25 @@ class Book:
         self.title = title
         self.author = author
         self.classname = "Book"
+    def __str__(self):
+        return "Base class"
     
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
         self.file_size = file_size
         self.classname = "EBook"
+    
+    def __str__(self):
+        return "Derived class"
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
         self.page_count = page_count
         self.classname = "PrintBook"
+    
+    def __str__(self):
+        return "Derived class"
 class Library:
     books = []
     def __init__(self):
