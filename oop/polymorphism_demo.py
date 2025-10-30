@@ -21,12 +21,12 @@ class Rectangle(Shape):
 
 class Circle(Shape):
     def __init__(self, radius):
-        super().__init__(self)
+        super().__init__()
         
         self.radius = radius
         
     def area(self):
-        return math.pi * self.radius ^ 2
+        return math.pi * self.radius ** 2
     
     def __str__(self):
         return "Derived class"
